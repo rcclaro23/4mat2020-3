@@ -25,3 +25,20 @@
     DELETE      Delete
 
 */
+const Curso = require('../models/Curso')
+const controller = {} // objeto vazio
+// Metodo novo(), implementar a operação Create
+   controller.novo = async(req, res) => {
+    try{
+        // Envia os dados dentro de req.body para o BD para a criação
+     await Curso.create(req. body)
+     //http 201 created
+     res.status(201).end() 
+    }
+    catch(erro){
+        console.error(erro)
+        //http 500:Internal Server Error
+        res.status(500).send(erro)
+    }
+}
+module.exports = controller

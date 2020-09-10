@@ -26,5 +26,7 @@ app.use('/users', usersRouter);
 // Criação de uma nova rota
 const teste = require('./routes/teste')
 app.use('/teste', teste)
-
+// rota para curso
+const curso = require('./routes/curso')
+app.use('/curso', curso)
 module.exports = app;
