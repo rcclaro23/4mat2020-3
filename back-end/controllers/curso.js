@@ -71,5 +71,38 @@ controller.obterUm = async (req, res) => {
         res.status(500).send(erro)
     }
 }
+//Metodo atualizar(), implementando a operação fr Update
+controller.atualizar = async(req, res) => {
 
+    try{
+    //Isolar o id do objeto para fins de busca
+    const id = req.body._id
+    //busca o objeto pelo id e, encontrando-o, substitui o conteudo por req.body
+    let obj =  await Curso.findByIdAndUpdate(id, req.body)
+    // se encontrou e substitui, retornamos o http 204: no content
+    if(obj) res.status(204).end()
+    //caso contrario, retorna http 404:not fond
+    else res.status(404).end()
+}
+catch(erro){
+    console.error(erro)
+    res.status(500).end()
+}
+}
+
+//metodo excluir(), implementando a operação delete
+controller.excluir = async(req, res) =>{
+    try{
+    //isolando o id para exclusao
+    const id = req.body._id
+    let obj = await Curso.findByIdAnDelete(id)
+    if(obj) res.status(204).end()
+    //Objeto nao foi encontrado para exclusao
+    else res.status(404).end()
+}
+catch(erro){
+    console.error(erro)
+    res.status(500).send(erro)
+}
+}
 module.exports = controller
