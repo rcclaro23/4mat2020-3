@@ -43,3 +43,28 @@ app.use('/sala-aula', sala_aula)
 const turma = require('./routes/turma')
 app.use('/turma', turma)
 module.exports = app;
+
+//Rota para veterinario
+const veterinario = require('./routes/veterinario')
+app.use('/veterinario', veterinario)
+module.exports = app;
+
+//Rota para secretaria
+const secretaria = require('./routes/secretaria')
+app.use('/secretaria', secretaria)
+module.exports = app;
+
+//Rota para cliente
+const cliente = require('./routes/cliente')
+app.use('/cliente', cliente)
+module.exports = app;
+
+//Rota para animal
+const animal = require('./routes/animal')
+app.use('/animal', animal)
+module.exports = app;
+
+//Rota para consulta
+const consulta = require('./routes/consulta')
+app.use('/consulta', consulta)
+module.exports = app;
