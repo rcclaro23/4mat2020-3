@@ -13,7 +13,7 @@ const esquema = mongoose.Schema({
     // email com indice unico p evitar duplicidades
     email: { type: String, required: true, index: {unique: true}}
 })
-
+//
 // PARÂMETROS DO mongoose.model()
 // 1º -> Nome do model (inicial maiúscula, igual ao nome do arquivo)
 // 2º -> a constante esquema, montada anteriormente
