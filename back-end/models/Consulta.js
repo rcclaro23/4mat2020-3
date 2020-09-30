@@ -5,7 +5,7 @@ const esquema = mongoose.Schema({
     hora: { type: String, required: true }, 
     valor: { type: Number, required: true }
     
-    }),
+    })
     
      
 
@@ -16,5 +16,5 @@ const esquema = mongoose.Schema({
 //       criados a partir deste model (inicial minúscula, plural do
 //       nome do model)
 
-;
+
 module.exports = mongoose.model('Consulta', esquema, 'consultas')
