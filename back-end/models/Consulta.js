@@ -9,7 +9,6 @@ const esquema = mongoose.Schema({
     
      
     
-
 // PARÂMETROS DO mongoose.model()
 // 1º -> Nome do model (inicial maiúscula, igual ao nome do arquivo)
 // 2º -> a constante esquema, montada anteriormente
