@@ -10,6 +10,8 @@ const esquema = mongoose.Schema({
     //valor_hora: { type: Number, required: true, default: 20.15},
     //endereco: { type: String, required: true},
     raca: { type: String, required: true},
+    cliente: {type: mongoose.ObjectId, ref: "Cliente", required: true}
+
     // email com indice unico p evitar duplicidades
     //email: { type: String, required: true, index: {unique: true}}
 })
