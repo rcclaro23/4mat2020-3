@@ -2,19 +2,12 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
    nome: { type: String, required: true},
-    //formacao: { type: String, required: true},
-    data_nascimento: { type: Date, required: true},
-    // cpf com indice unico p evitar duplicidade
-    //cpf: { type: String, required: true, index: {unique: true}},
-    especie: { type: String, required: true},
-    //valor_hora: { type: Number, required: true, default: 20.15},
-    //endereco: { type: String, required: true},
-    raca: { type: String, required: true},
-    cliente: {type: mongoose.ObjectId, ref: "Cliente", required: true}
+   data_nascimento: { type: Date, required: true},
+   especie: { type: String, required: true},
+   raca: { type: String, required: true},
+   cliente: {type: mongoose.ObjectId, ref: "Cliente", required: true}
 
-    // email com indice unico p evitar duplicidades
-    //email: { type: String, required: true, index: {unique: true}}
-})
+    })
 
 // PARÂMETROS DO mongoose.model()
 // 1º -> Nome do model (inicial maiúscula, igual ao nome do arquivo)

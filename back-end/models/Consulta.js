@@ -3,8 +3,10 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
     data: { type: Date, required: true },
     hora: { type: String, required: true }, 
-    valor: { type: Number, required: true }
+    valor: { type: Number, required: true },
     
+     veterinario: {type: mongoose.ObjectId, ref: "Veterinario", required: true},
+     animal: {type: mongoose.ObjectId, ref: "Animal", required: true}
     })
     
      
