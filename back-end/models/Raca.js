@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    nome: {
+    nome_raca: {
         type: String,
-        required: true  // Atributo obrigatório
-    },
+        required: true },
+        especie: {type: mongoose.ObjectId, ref: "Especie", required: true} // Atributo obrigatório
+    })
     //carga_horaria: {
         //type: Number,
        // required: true,
@@ -23,7 +24,7 @@ const esquema = mongoose.Schema({
         //required: true,
        // min: 50
    // }
-})
+
 
 // PARÂMETROS DO mongoose.model()
 // 1º -> Nome do model (inicial maiúscula, igual ao nome do arquivo)
