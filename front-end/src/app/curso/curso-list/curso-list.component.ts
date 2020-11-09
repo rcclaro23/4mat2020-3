@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursoListComponent implements OnInit {
     cursos: any = [] // vetor vazio
-
+    displayedColumns : string[] = ['nome', 'carga_horaria', 'nivel', 'valor_curso' ]
   constructor(private cursoSrv : CursoService) { }
 
   async ngOnInit() {
