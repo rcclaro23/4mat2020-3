@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { CursoListComponent } from './curso/curso-list/curso-list.component';
 import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 
-//import { CursoListComponent} from './curso/curso-list/curso-list.component';
+import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 
 const routes: Routes = [
-    // rotas no angular Nunca começam com /
-   { path: 'curso', component: CursoListComponent},
-   {path: 'curso/novo', component: CursoFormComponent},
-   {path: 'curso/:id', component: CursoFormComponent}
+    // Rotas no Angular NUNCA começam com /
+    { path: 'curso', component: CursoListComponent },
+    { path: 'curso/novo', component: CursoFormComponent},
+    { path: 'curso/:id', component: CursoFormComponent },
+
+    { path: 'turma', component: TurmaListComponent }
 ];
 
 @NgModule({
