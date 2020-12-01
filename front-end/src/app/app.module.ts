@@ -1,3 +1,6 @@
+// Bem no início do arquivo app.module.ts
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -42,7 +45,8 @@ import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     // No app.module.ts, dentro seção providers
