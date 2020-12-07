@@ -1,0 +1,47 @@
+<h1>{{ title}}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+<!--<mat-form-field appearance="fill">-->
+    <mat-form-field>
+    <mat-label>Nome do cliente</mat-label>
+    <input name="nome" [(ngModel)]="cliente.nome" matInput required
+    placeholder="Informe o nome do cliente" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>CPF</mat-label>
+    <input name="cpf" [(ngModel)]="cliente.cpf" matInput required 
+    placeholder="Informe o cpf" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Endereco</mat-label>
+    <input name="endereco" [(ngModel)]="cliente.endereco" matInput required 
+    placeholder="Informe o endereco do cliente">
+  </mat-form-field>
+
+   <mat-form-field>
+    <mat-label>Telefone</mat-label>
+    <input name="telefone" [(ngModel)]="cliente.telefone" matInput required 
+    placeholder="Informe o telefone do cliente">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input name="email" [(ngModel)]="cliente.email" matInput required 
+    placeholder="Informe o email do cliente">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form> 
