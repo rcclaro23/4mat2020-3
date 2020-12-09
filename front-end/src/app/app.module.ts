@@ -28,6 +28,18 @@ import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
 import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { AnimalListComponent } from './animal/animal-list/animal-list.component';
+import { AnimalFormComponent } from './animal/animal-form/animal-form.component';
+import { ConsultaListComponent } from './consulta/consulta-list/consulta-list.component';
+import { ConsultaFormComponent } from './consulta/consulta-form/consulta-form.component';
+import { EspecieListComponent } from './especie/especie-list/especie-list.component';
+import { EspecieFormComponent } from './especie/especie-form/especie-form.component';
+import { RacaListComponent } from './raca/raca-list/raca-list.component';
+import { RacaFormComponent } from './raca/raca-form/raca-form.component';
+import { SecretariaListComponent } from './secretaria/secretaria-list/secretaria-list.component';
+import { SecretariaFormComponent } from './secretaria/secretaria-form/secretaria-form.component';
+import { VeterinarioListComponent } from './veterinario/veterinario-list/veterinario-list.component';
+import { VeterinarioFormComponent } from './veterinario/veterinario-form/veterinario-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +52,19 @@ import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.compon
     TurmaListComponent,
     TurmaFormComponent,
     ClienteListComponent,
-    ClienteFormComponent
+    ClienteFormComponent,
+    AnimalListComponent,
+    AnimalFormComponent,
+    ConsultaListComponent,
+    ConsultaFormComponent,
+    EspecieListComponent,
+    EspecieFormComponent,
+    RacaListComponent,
+    RacaFormComponent,
+    SecretariaListComponent,
+    SecretariaFormComponent,
+    VeterinarioListComponent,
+    VeterinarioFormComponent
   ],
   imports: [
     BrowserModule,

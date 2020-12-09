@@ -7,7 +7,7 @@ import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
-
+import { AnimalListComponent } from './animal/animal-list/animal-list.component';
 
 
 
@@ -23,7 +23,9 @@ const routes: Routes = [
 
     {path: 'cliente', component: ClienteListComponent},
     {path: 'cliente/novo', component: ClienteFormComponent},
-    {path: 'cliente/:id', component: ClienteFormComponent}
+    {path: 'cliente/:id', component: ClienteFormComponent},
+
+    {path: 'animal', component: AnimalListComponent}
 
 
 ];
