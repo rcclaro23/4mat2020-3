@@ -58,7 +58,8 @@ controller.listar = async (req, res) => {
         res.status(500).send(erro)
     }
 }
- 
+
+
 // Método obterUm(), implementando a operação RETRIEVE (one)
 controller.obterUm = async(req, res) => {
     const id = req.params.id // Capturandoo parâmetro id
