@@ -60,9 +60,9 @@ controller.listar = async (req, res) => {
 }
  
 // Método obterUm(), implementando a operação RETRIEVE (one)
-controller.obterUm = (req, res) => {
+controller.obterUm = async(req, res) => {
     const id = req.params.id // Capturandoo parâmetro id
-    let obj = Animal.findById(id)
+    let obj = await Animal.findById(id)
  
     // Se o objeto vier preenchido (achou), então o retornamos
     if(obj) res.send(obj)
