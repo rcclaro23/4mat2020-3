@@ -14,11 +14,8 @@ import { SecretariaService } from './../../secretaria/secretaria.service';
 export class VeterinarioFormComponent implements OnInit {
 
   title : string = 'Novo veterinario'
-
   veterinario : any = {} // Objeto vazio, nome da entidade no SINGULAR
-
   secretarias: any = []
-  
 
   constructor(
     private veterinarioSrv : VeterinarioService,
@@ -28,7 +25,7 @@ export class VeterinarioFormComponent implements OnInit {
     private secretariaSrv: SecretariaService
   ) { }
 
-  async ngOnInit() {
+async ngOnInit() {
     // Verificando se existe id na rota que trouxe ao formulário
     if(this.actRoute.snapshot.params['id']) {
       try {
@@ -42,6 +39,16 @@ export class VeterinarioFormComponent implements OnInit {
         this.snackBar.open('ERRO: não foi possível carregar os dados para edição.',
           'Que pena!', { duration: 5000 })
       }
+    }
+
+    // Carregar as listagens das entidades relacionadas
+    try {
+      this.secretarias = await this.secretariaSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
+        'Que pena!', { duration: 5000 })
     }
   }
 
@@ -77,7 +84,7 @@ export class VeterinarioFormComponent implements OnInit {
     // form.touched = o conteúdo de algum campo foi alterado (via usuário)
     if(form.dirty && form.touched) {
       result = confirm('Há dados não salvos. Deseja realmente voltar?')
-    } 
+    }
     // Retorna à página anterior se resposta foi positiva ou se o formulário
     // estiver "limpo"
     if(result) this.location.back()
