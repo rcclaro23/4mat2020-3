@@ -6,7 +6,7 @@ const esquema = mongoose.Schema({
     valor: { type: Number, required: true },
     
      veterinario: {type: mongoose.ObjectId, ref: "Veterinario", required: true},
-     animal: {type: mongoose.ObjectId, ref: "Animal", required: true}
+     animal: {type: mongoose.ObjectId, ref: "Animal", required: true},
     })
     
      

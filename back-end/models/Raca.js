@@ -4,8 +4,12 @@ const esquema = mongoose.Schema({
     nome_raca: {
         type: String,
         required: true },
-        especie: {type: mongoose.ObjectId, ref: "Especie", required: true} // Atributo obrigatório
+        
+        especie: {type: mongoose.ObjectId, ref: "Especie", required: true},
+        animal:{ type: mongoose.ObjectId, ref: "Animal", required: true}
     })
+    
+    //Atributo obrigatorio
     //carga_horaria: {
         //type: Number,
        // required: true,
