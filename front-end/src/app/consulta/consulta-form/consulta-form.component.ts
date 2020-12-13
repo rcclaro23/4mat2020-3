@@ -1,4 +1,4 @@
-import { VeterinarioService } from 'src/app/veterinario/veterinario.service';
+import { VeterinarioService } from './../../veterinario/veterinario.service';
 import { AnimalService } from 'src/app/animal/animal.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConsultaService } from './../consulta.service';
@@ -18,19 +18,17 @@ export class ConsultaFormComponent implements OnInit {
 
   consulta : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  veterinarios: any []
-
-  animais: any []
-
+  // Variáveis para armazenas as listagens das entidades relacionadas
+  veterinarios : any = []   // Nome no plural, vetor vazio
+  animais : any = []
 
   constructor(
     private consultaSrv : ConsultaService,
+    private veterinarioSrv : VeterinarioService,
+    private animalSrv : AnimalService,
     private snackBar : MatSnackBar,
     private location : Location,
-    private actRoute : ActivatedRoute,
-    private veterinarioSrv: VeterinarioService,
-    private animalSrv: AnimalService
-
+    private actRoute : ActivatedRoute
   ) { }
 
   async ngOnInit() {
@@ -47,6 +45,17 @@ export class ConsultaFormComponent implements OnInit {
         this.snackBar.open('ERRO: não foi possível carregar os dados para edição.',
           'Que pena!', { duration: 5000 })
       }
+    }
+
+    // Carregar as listagens das entidades relacionadas
+    try {
+      this.veterinarios = await this.veterinarioSrv.listar()
+      this.animais = await this.animalSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
+        'Que pena!', { duration: 5000 })
     }
   }
 
@@ -82,7 +91,7 @@ export class ConsultaFormComponent implements OnInit {
     // form.touched = o conteúdo de algum campo foi alterado (via usuário)
     if(form.dirty && form.touched) {
       result = confirm('Há dados não salvos. Deseja realmente voltar?')
-    } 
+    }
     // Retorna à página anterior se resposta foi positiva ou se o formulário
     // estiver "limpo"
     if(result) this.location.back()

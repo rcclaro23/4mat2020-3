@@ -12,7 +12,7 @@
   <mat-form-field>
     <mat-label>CPF</mat-label>
     <input name="cpf" [(ngModel)]="cliente.cpf" matInput required 
-    placeholder="Informe o cpf" >
+    placeholder="Informe o cpf" type="number">
   </mat-form-field>
 
   <mat-form-field>
@@ -24,7 +24,7 @@
    <mat-form-field>
     <mat-label>Telefone</mat-label>
     <input name="telefone" [(ngModel)]="cliente.telefone" matInput required 
-    placeholder="Informe o telefone do cliente">
+    placeholder="Informe o telefone do cliente" type="number">
   </mat-form-field>
 
   <mat-form-field>
@@ -43,6 +43,5 @@
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
-
 
 </form> 

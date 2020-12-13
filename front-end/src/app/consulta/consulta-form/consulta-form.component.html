@@ -3,18 +3,35 @@
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
 <!--<mat-form-field appearance="fill">-->
-    <mat-form-field>
+
+<!--<mat-form-field>
     <mat-label>Data</mat-label>
     <input name="data" [(ngModel)]="consulta.data" matInput required
     placeholder="Informe a data" type="number">
   </mat-form-field>
+-->
 
+  <mat-form-field>
+    <mat-label>Data</mat-label>
+    <input matInput [matDatepicker]="data" [(ngModel)]="consulta.data" name="data" required>
+    <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+    <mat-datepicker #data></mat-datepicker>
+  </mat-form-field>
+
+<!--
   <mat-form-field>
     <mat-label>Hora</mat-label>
     <input name="hora" [(ngModel)]="consulta.hora" matInput required 
     placeholder="Informe a hora" type="number">
   </mat-form-field>
+-->
 
+  <mat-form-field>
+    <mat-label>Hora</mat-label>
+    <input name="hora" [(ngModel)]="consulta.hora" matInput required
+      placeholder="Informe a hora" mask="00:00" [dropSpecialCharacters]="false">
+  </mat-form-field>
+  
   <mat-form-field>
     <mat-label>Valor</mat-label>
     <input name="valor" [(ngModel)]="consulta.valor" matInput required 
@@ -49,6 +66,5 @@
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
-
 
 </form> 
