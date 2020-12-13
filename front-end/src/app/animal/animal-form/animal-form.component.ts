@@ -1,9 +1,13 @@
+import { ConsultaFormComponent } from './../../consulta/consulta-form/consulta-form.component';
+import { ClienteService } from './../../cliente/cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AnimalService } from './../animal.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { AnimalService } from 'src/app/animal/animal.service';
+import { RacaService } from 'src/app/raca/raca.service';
+import { ConsultaService } from 'src/app/consulta/consulta.service';
 
 @Component({
   selector: 'app-animal-form',
@@ -16,16 +20,16 @@ export class AnimalFormComponent implements OnInit {
 
   animal : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  
-  //[
-  //  { valor: 'Cachoro', descr: 'Cachorro' },
-  //  { valor: 'Papagaio', descr: 'Papagaio' },
-  //  { valor: 'Gato', descr: 'Gato' }
- // ] 
-
+  // Variáveis para armazenas as listagens das entidades relacionadas
+  clientes : any = []   // Nome no plural, vetor vazio
+  consultas : any = []
+  racas : any = []
 
   constructor(
     private animalSrv : AnimalService,
+    private clienteSrv : ClienteService,
+    private consultaSrv : ConsultaService,
+    private racaSrv: RacaService,
     private snackBar : MatSnackBar,
     private location : Location,
     private actRoute : ActivatedRoute
@@ -38,13 +42,25 @@ export class AnimalFormComponent implements OnInit {
         // 1) Trazer o registro do back-end para edição
         this.animal = await this.animalSrv.obterUm(this.actRoute.snapshot.params['id'])
         // 2) Mudar o título da página
-        this.title = 'Editando animal'
+        this.title = 'Editando turma'
       }
       catch(erro) {
         console.log(erro)
         this.snackBar.open('ERRO: não foi possível carregar os dados para edição.',
           'Que pena!', { duration: 5000 })
       }
+    }
+
+    // Carregar as listagens das entidades relacionadas
+    try {
+      this.clientes = await this.clienteSrv.listar()
+      this.consultas = await this.consultaSrv.listar()
+      this.racas = await this.racaSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
+        'Que pena!', { duration: 5000 })
     }
   }
 
@@ -80,7 +96,7 @@ export class AnimalFormComponent implements OnInit {
     // form.touched = o conteúdo de algum campo foi alterado (via usuário)
     if(form.dirty && form.touched) {
       result = confirm('Há dados não salvos. Deseja realmente voltar?')
-    } 
+    }
     // Retorna à página anterior se resposta foi positiva ou se o formulário
     // estiver "limpo"
     if(result) this.location.back()
