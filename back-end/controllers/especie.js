@@ -50,7 +50,7 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try{
     //find() sem parâmetros é para trazer tudo 
-    let dados = await Especie.find().populate("especie")
+    let dados = await Especie.find()//.populate("raca")
     res.send(dados)// Vai com status HTTP 200: OK
     }
     catch(erro){
