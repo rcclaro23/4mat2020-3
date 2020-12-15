@@ -5,8 +5,8 @@ const esquema = mongoose.Schema({
         type: String,
         required: true },
         
-        especie: {type: mongoose.ObjectId, ref: "Especie", required: true},
-        animal:{ type: mongoose.ObjectId, ref: "Animal", required: true}
+        especie: {type: mongoose.ObjectId, ref: 'Especie', required: true},
+        //animal:{ type: mongoose.ObjectId, ref: 'Animal', required: true}
     })
     
     //Atributo obrigatorio

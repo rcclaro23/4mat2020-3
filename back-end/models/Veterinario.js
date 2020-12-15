@@ -8,8 +8,8 @@ const esquema = mongoose.Schema({
    telefone: { type: String, required: true},
    email: { type: String, required: true, index: {unique: true}},
 
-   secretaria:{ type: mongoose.ObjectId, ref: "Secretaria", required: true},
-   consulta:{ type: mongoose.ObjectId, ref: "Consulta", required: true}
+   secretaria:{ type: mongoose.ObjectId, ref: 'Secretaria', required: true},
+   //consulta:{ type: mongoose.ObjectId, ref: 'Consulta', required: true}
 
     })
  

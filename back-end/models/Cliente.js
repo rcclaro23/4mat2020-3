@@ -7,7 +7,7 @@ const esquema = mongoose.Schema({
    telefone: { type: String, required: true},
    email: { type: String, required: true, index: {unique: true}},
 
-   animal:{ type: mongoose.ObjectId, ref: "Animal", required: true}
+   //animal:{ type: mongoose.ObjectId, ref: 'Animal', required: true}
 })
 
 // PARÂMETROS DO mongoose.model()

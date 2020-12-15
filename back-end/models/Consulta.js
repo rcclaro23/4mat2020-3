@@ -5,8 +5,8 @@ const esquema = mongoose.Schema({
     hora: { type: String, required: true }, 
     valor: { type: Number, required: true },
     
-     veterinario: {type: mongoose.ObjectId, ref: "Veterinario", required: true},
-     animal: {type: mongoose.ObjectId, ref: "Animal", required: true},
+     veterinario: {type: mongoose.ObjectId, ref: 'Veterinario', required: true},
+     animal: {type: mongoose.ObjectId, ref: 'Animal', required: true},
     })
     
      

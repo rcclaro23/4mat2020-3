@@ -6,7 +6,7 @@ const esquema = mongoose.Schema({
    telefone: { type: String, required: true},
    email: { type: String, required: true, index: {unique: true}},
 
-   veterinario:{ type: mongoose.ObjectId, ref: "Veterinario", required: true}
+   //veterinario:{ type: mongoose.ObjectId, ref: 'Veterinario', required: true}
 
 
 })
