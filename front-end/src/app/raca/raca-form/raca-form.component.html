@@ -4,34 +4,13 @@
 
   <!--mat-form-field appearance="fill"-->
   <mat-form-field>
-    <mat-label>Nome do raca</mat-label>
+    <mat-label>Nome da raca</mat-label>
     <input name="nome" [(ngModel)]="raca.nome" matInput required
-      placeholder="Informe o nome do raca">
+      placeholder="Informe o nome da raca">
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Carga horária</mat-label>
-    <input name="carga_horaria" [(ngModel)]="raca.carga_horaria" matInput required
-      placeholder="Informe a carga horária" type="number">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Nível</mat-label>
-    <mat-select name="nivel" [(ngModel)]="raca.nivel" required>
-      <!--mat-option value="Básico">Básico</mat-option>
-      <mat-option value="Intermediário">Intermediário</mat-option>
-      <mat-option value="Avançado">Avançado</mat-option-->
-      <mat-option *ngFor="let nivel of niveis" [value]="nivel.valor">
-        {{ nivel.descr }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Valor do raca</mat-label>
-    <input name="valor_raca" [(ngModel)]="raca.valor_raca" matInput required
-      placeholder="Informe o valor do raca" type="number">
-  </mat-form-field>
+  
+ 
 
   <mat-toolbar class="form-buttons">
     <mat-toolbar-row>

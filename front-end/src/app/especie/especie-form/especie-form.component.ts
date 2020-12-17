@@ -16,11 +16,8 @@ export class EspecieFormComponent implements OnInit {
 
   especie : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  niveis : any = [
-    { valor: 'Básico', descr: 'Básico' },
-    { valor: 'Intermediário', descr: 'Intermediário' },
-    { valor: 'Avançado', descr: 'Avançado' }
-  ]
+  niveis : any = []  
+  
 
   constructor(
     private especieSrv : EspecieService,

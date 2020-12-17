@@ -12,7 +12,7 @@ export class RacaListComponent implements OnInit {
 
     racas: any = [] // vetor vazio
 
-    displayedColumns : string[] = ['nome_raca',
+    displayedColumns : string[] = ['nome_raca', 'especie',
     'editar','excluir']
     
   constructor(

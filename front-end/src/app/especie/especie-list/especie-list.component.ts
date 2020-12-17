@@ -12,7 +12,7 @@ export class EspecieListComponent implements OnInit {
 
     especies: any = [] // vetor vazio
 
-    displayedColumns : string[] = ['nome_especie', 'raca',
+    displayedColumns : string[] = ['nome_especie', 
     'editar','excluir']
     
   constructor(
