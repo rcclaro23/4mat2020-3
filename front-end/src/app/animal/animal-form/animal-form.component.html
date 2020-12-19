@@ -3,52 +3,48 @@
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
 <!--<mat-form-field appearance="fill">-->
-    <mat-form-field>
-    <mat-label>Nome do animal</mat-label>
-    <input name="nome" [(ngModel)]="animal.nome" matInput required
-    placeholder="Informe o nome do animal" >
-  </mat-form-field>
 
-<!--
-  <mat-form-field>
-    <mat-label>Data de nascimento</mat-label>
-    <input name="data_nascimento" [(ngModel)]="animal.data_nascimento" matInput required 
-    placeholder="Informe a data de nascimento" type="number">
+<!--<mat-form-field>
+    <mat-label>Data</mat-label>
+    <input name="data" [(ngModel)]="animal.data" matInput required
+    placeholder="Informe a data" type="number">
   </mat-form-field>
 -->
-    <mat-form-field>
-    <mat-label>Data de nascimento</mat-label>
+
+  
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input name="nome" [(ngModel)]="animal.nome" matInput required 
+    placeholder="Informe o nome" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>data_nascimento</mat-label>
     <input matInput [matDatepicker]="data_nascimento" [(ngModel)]="animal.data_nascimento" name="data_nascimento" required>
     <mat-datepicker-toggle matSuffix [for]="data_nascimento"></mat-datepicker-toggle>
     <mat-datepicker #data_nascimento></mat-datepicker>
   </mat-form-field>
+  
+  
 
-  <mat-form-field>
+    <mat-form-field>
     <mat-label>Cliente</mat-label>
-    <input name="cliente" [(ngModel)]="animal.cliente" matInput required 
-    placeholder="Informe o nome do cliente">
+      <mat-select name="cliente" [(ngModel)]="animal.cliente" required>
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+          {{ cliente.nome }}
+        </mat-option>
+      </mat-select>
   </mat-form-field>
 
-
-  <mat-form-field>
-    <mat-label>Raça</mat-label>
-    <input name="raca" [(ngModel)]="animal.raca" matInput required 
-    placeholder="Informe a raca">
+    <mat-form-field>
+    <mat-label>Raca</mat-label>
+      <mat-select name="raca" [(ngModel)]="animal.raca" required>
+        <mat-option *ngFor="let raca of racas" [value]="raca._id">
+          {{ raca.id_raca }}
+        </mat-option>
+      </mat-select>
   </mat-form-field>
-
-
-<!--
-  <mat-form-field >
-    <mat-label>Especie</mat-label>
-    <mat-select name="especie"[(ngModel)]="animal.especie" required>
-    <mat-option value="Básico">Básico</mat-option>
-      <mat-option value="Intermediário">Intermediário</mat-option>
-      <mat-option value="Avançado">Avançado</mat-option>
-      <mat-option *ngFor = "let especie of especies" [value]="especie.valor">
-      {{ especie.descr }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>-->
 
   <mat-toolbar class="form-buttons">
     <mat-toolbar-row>

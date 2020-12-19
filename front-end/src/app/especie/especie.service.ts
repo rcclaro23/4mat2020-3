@@ -7,28 +7,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EspecieService {
 
-    private server = environment.apiServer
-    private apiUri = this.server + 'especie'
-    
-    constructor(private http : HttpClient) { }
+  private server = environment.apiServer
+  private apiUri = this.server + 'especie'
 
-    listar(){
-        return this.http.get(this.server + 'especie').toPromise()
-    }
+  constructor(private http : HttpClient) { }
 
-    excluir(id : string) {
-        return this.http.request('DELETE', this.server + 'especie', {body: {_id: id}}).toPromise()
-    }
+  listar() {
+    return this.http.get(this.apiUri).toPromise()
+  }
 
-    novo(body : any) {
-        return this.http.post(this.apiUri, body).toPromise()
-    }
+  excluir(id : string) {
+    return this.http.request('DELETE', this.apiUri, {body: {_id: id}}).toPromise()    
+  }
 
-    obterUm(id: string) {
+  novo(body : any) {
+    return this.http.post(this.apiUri, body).toPromise()
+  }
+
+  obterUm(id: string) {
     return this.http.get(this.apiUri + '/' + id).toPromise()
   }
 
-    atualizar(body : any) {
+  atualizar(body : any) {
     return this.http.put(this.apiUri, body).toPromise()
   }
 

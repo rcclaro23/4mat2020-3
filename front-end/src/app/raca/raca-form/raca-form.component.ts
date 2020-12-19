@@ -16,7 +16,7 @@ export class RacaFormComponent implements OnInit {
 
   raca : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  niveis : any = []
+  
    
    
   

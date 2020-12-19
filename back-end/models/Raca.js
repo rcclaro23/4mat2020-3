@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    nome_raca: {
+    id_raca: {
         type: String,
         required: true },
         

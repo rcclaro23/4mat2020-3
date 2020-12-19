@@ -1,4 +1,3 @@
-
 import { RacaService } from '../raca.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -12,7 +11,7 @@ export class RacaListComponent implements OnInit {
 
     racas: any = [] // vetor vazio
 
-    displayedColumns : string[] = ['nome_raca', 'especie',
+    displayedColumns : string[] = ['id_raca', 'especie',
     'editar','excluir']
     
   constructor(

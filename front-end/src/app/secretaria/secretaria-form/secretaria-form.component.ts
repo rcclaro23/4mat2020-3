@@ -16,11 +16,7 @@ export class SecretariaFormComponent implements OnInit {
 
   secretaria : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  niveis : any = [
-    { valor: 'Básico', descr: 'Básico' },
-    { valor: 'Intermediário', descr: 'Intermediário' },
-    { valor: 'Avançado', descr: 'Avançado' }
-  ]
+  
 
   constructor(
     private secretariaSrv : SecretariaService,

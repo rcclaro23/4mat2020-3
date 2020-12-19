@@ -16,7 +16,6 @@ export class EspecieFormComponent implements OnInit {
 
   especie : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  niveis : any = []  
   
 
   constructor(

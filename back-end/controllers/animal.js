@@ -52,7 +52,7 @@ controller.listar = async (req, res) => {
     //find() sem parâmetros é para trazer tudo 
     let dados = await Animal.find()
     .populate('cliente')
-    .populate('consulta')
+    //.populate('consulta')
     .populate('raca')
     res.send(dados)// Vai com status HTTP 200: OK
     }
