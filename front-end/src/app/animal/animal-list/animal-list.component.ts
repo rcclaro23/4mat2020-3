@@ -11,7 +11,7 @@ export class AnimalListComponent implements OnInit {
 
   animais : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['nome', 'data_nascimento', 'cliente', 'raca',
+  displayedColumns : string[] = ['nome', 'data', 'cliente', 'raca',
     'editar', 'excluir']
   
   constructor(

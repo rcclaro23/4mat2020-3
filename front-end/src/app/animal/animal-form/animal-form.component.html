@@ -20,10 +20,10 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>data_nascimento</mat-label>
-    <input matInput [matDatepicker]="data_nascimento" [(ngModel)]="animal.data_nascimento" name="data_nascimento" required>
-    <mat-datepicker-toggle matSuffix [for]="data_nascimento"></mat-datepicker-toggle>
-    <mat-datepicker #data_nascimento></mat-datepicker>
+    <mat-label>data</mat-label>
+    <input matInput [matDatepicker]="data" [(ngModel)]="animal.data" name="data" required>
+    <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+    <mat-datepicker #data></mat-datepicker>
   </mat-form-field>
   
   
@@ -41,7 +41,7 @@
     <mat-label>Raca</mat-label>
       <mat-select name="raca" [(ngModel)]="animal.raca" required>
         <mat-option *ngFor="let raca of racas" [value]="raca._id">
-          {{ raca.id_raca }}
+          {{ raca.nome }}
         </mat-option>
       </mat-select>
   </mat-form-field>
