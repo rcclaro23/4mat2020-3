@@ -9,7 +9,6 @@
         "@schematics/angular:component": {
           "inlineTemplate": false,
           "inlineStyle": false,
-          
           "style": "scss",
           "skipTests": true
         },
@@ -109,5 +108,8 @@
       }
     }
   },
-  "defaultProject": "front-end"
+  "defaultProject": "front-end",
+  "cli": {
+    "analytics": "e6769409-e5d2-4425-ab8d-95bc14e18780"
+  }
 }
