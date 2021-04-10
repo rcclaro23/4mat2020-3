@@ -11,7 +11,7 @@ export class ConsultaListComponent implements OnInit {
 
   consultas : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['data', 'hora', 'valor', 'veterinario', 'animal',
+  displayedColumns : string[] = ['data', 'hora', 'valor', 'dentista', 'cliente',
     'editar', 'excluir']
   
   constructor(

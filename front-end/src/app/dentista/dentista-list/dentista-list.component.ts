@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { VeterinarioService } from '../veterinario.service';
+import { DentistaService } from '../dentista.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-veterinario-list',
-  templateUrl: './veterinario-list.component.html',
-  styleUrls: ['./veterinario-list.component.scss']
+  selector: 'app-dentista-list',
+  templateUrl: './dentista-list.component.html',
+  styleUrls: ['./dentista-list.component.scss']
 })
-export class VeterinarioListComponent implements OnInit {
+export class DentistaListComponent implements OnInit {
 
-  veterinarios : any = []  // Vetor vazio
+  dentista : any = []  // Vetor vazio
 
   displayedColumns : string[] = ['nome', 'formacao', 'cpf', "endereco", "telefone", "email", "secretaria", 'editar', 'excluir']
   
   constructor(
-    private veterinarioSrv : VeterinarioService,
+    private dentistaSrv : DentistaService,
     private snackBar : MatSnackBar
   ) { }
 
   async ngOnInit() {
-    this.veterinarios = await this.veterinarioSrv.listar()
-    console.log(this.veterinarios)
+    this.dentista = await this.dentistaSrv.listar()
+    console.log(this.dentista)
   }
 
   async excluir(id : string) {
     if(confirm('Deseja realmente excluir este item?')) {
       try {
         // 1) Efetuar a exclusão
-        await this.veterinarioSrv.excluir(id)
+        await this.dentistaSrv.excluir(id)
         // 2) Atualizar os dados da tabela
         this.ngOnInit()
         // 3) Dar um feedback de sucesso para o usuário

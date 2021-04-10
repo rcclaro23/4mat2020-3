@@ -1,64 +1,64 @@
-<h1>Listagem de veterinarios</h1>
+<h1>Listagem de dentistas</h1>
 
 <mat-toolbar class="new-item">
-  <a mat-raised-button color="accent" [routerLink]="['/veterinario/novo']">
+  <a mat-raised-button color="accent" [routerLink]="['/dentista/novo']">
     <mat-icon>add_circle</mat-icon>
-    Novo veterinario
+    Novo dentista
   </a>
 </mat-toolbar>
 
-<table mat-table [dataSource]="veterinarios" class="mat-elevation-z4">
+<table mat-table [dataSource]="dentista" class="mat-elevation-z4">
 
 	<!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
 	<!-- Nome Column -->
 	<ng-container matColumnDef="nome">
-		<th mat-header-cell *matHeaderCellDef> Turma </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.nome }} </td>
+		<th mat-header-cell *matHeaderCellDef> Nome </th>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.nome }} </td>
 	</ng-container>
 
 	<!-- Formação Column -->
 	<ng-container matColumnDef="formacao">
 		<th mat-header-cell *matHeaderCellDef> Formação </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.formacao }} </td>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.formacao }} </td>
 	</ng-container>
 
     <!-- CPF Column -->
 	<ng-container matColumnDef="cpf">
 		<th mat-header-cell *matHeaderCellDef> CPF </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.cpf }} </td>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.cpf }} </td>
 	</ng-container>
 
     <!-- Endereço Column -->
 	<ng-container matColumnDef="endereco">
 		<th mat-header-cell *matHeaderCellDef> Endereço </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.endereco }} </td>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.endereco }} </td>
 	</ng-container>
 
     <!-- Telefone Column -->
 	<ng-container matColumnDef="telefone">
 		<th mat-header-cell *matHeaderCellDef> Telefone </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.telefone }} </td>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.telefone }} </td>
 	</ng-container>
 
     <!-- Email Column -->
 	<ng-container matColumnDef="email">
 		<th mat-header-cell *matHeaderCellDef> Email </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.email }} </td>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.email }} </td>
 	</ng-container>
 
 	<!-- Secretaria Column -->
 	<ng-container matColumnDef="secretaria">
 		<th mat-header-cell *matHeaderCellDef> Secretaria </th>
-		<td mat-cell *matCellDef="let veterinario"> {{ veterinario.secretaria?.nome }} </td>
+		<td mat-cell *matCellDef="let dentista"> {{ dentista.secretaria?.nome }} </td>
 	</ng-container>
 
 	<!-- Editar Column -->
 	<ng-container matColumnDef="editar">
 		<th mat-header-cell class="cell-align-center" *matHeaderCellDef>Editar</th>
-		<td mat-cell class="cell-align-center" *matCellDef="let veterinario">
-			<a mat-raised-button color="accent" title="Editar" [routerLink]="['/veterinario', veterinario._id]">
+		<td mat-cell class="cell-align-center" *matCellDef="let dentista">
+			<a mat-raised-button color="accent" title="Editar" [routerLink]="['/dentista', dentista._id]">
 				<mat-icon>edit</mat-icon>
 			</a>
 		</td>
@@ -67,8 +67,8 @@
 	<!-- Excluir Column -->
 	<ng-container matColumnDef="excluir">
 		<th mat-header-cell class="cell-align-center" *matHeaderCellDef>Excluir</th>
-		<td mat-cell class="cell-align-center" *matCellDef="let veterinario">
-			<button mat-raised-button color="warn" title="Excluir" (click)="excluir(veterinario._id)">
+		<td mat-cell class="cell-align-center" *matCellDef="let dentista">
+			<button mat-raised-button color="warn" title="Excluir" (click)="excluir(dentista._id)">
             <mat-icon>delete_forever</mat-icon>
         </button>
 		</td>

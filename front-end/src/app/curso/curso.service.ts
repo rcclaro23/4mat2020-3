@@ -13,7 +13,7 @@ export class CursoService {
   constructor(private http : HttpClient) { }
 
   listar() {
-    return this.http.get(this.apiUri).toPromise()
+    return this.http.get(this.server).toPromise()
   }
 
   excluir(id : string) {

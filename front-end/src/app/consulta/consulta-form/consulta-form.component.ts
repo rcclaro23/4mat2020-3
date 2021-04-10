@@ -1,5 +1,5 @@
-import { VeterinarioService } from './../../veterinario/veterinario.service';
-import { AnimalService } from 'src/app/animal/animal.service';
+import { DentistaService } from './../../dentista/dentista.service';
+import { ClienteService } from 'src/app/cliente/cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConsultaService } from './../consulta.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,13 +19,13 @@ export class ConsultaFormComponent implements OnInit {
   consulta : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
   // Variáveis para armazenas as listagens das entidades relacionadas
-  veterinarios : any = []   // Nome no plural, vetor vazio
-  animais : any = []
+  dentistas : any = []   // Nome no plural, vetor vazio
+  clientes : any = []
 
   constructor(
     private consultaSrv : ConsultaService,
-    private veterinarioSrv : VeterinarioService,
-    private animalSrv : AnimalService,
+    private dentistaSrv : DentistaService,
+    private clienteSrv : ClienteService,
     private snackBar : MatSnackBar,
     private location : Location,
     private actRoute : ActivatedRoute
@@ -49,8 +49,8 @@ export class ConsultaFormComponent implements OnInit {
 
     // Carregar as listagens das entidades relacionadas
     try {
-      this.veterinarios = await this.veterinarioSrv.listar()
-      this.animais = await this.animalSrv.listar()
+      this.dentistas = await this.dentistaSrv.listar()
+      this.clientes = await this.clienteSrv.listar()
     }
     catch(erro) {
       console.log(erro)

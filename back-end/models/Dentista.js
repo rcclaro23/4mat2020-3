@@ -9,7 +9,7 @@ const esquema = mongoose.Schema({
    email: { type: String, required: true, index: {unique: true}},
 
    secretaria:{ type: mongoose.ObjectId, ref: 'Secretaria', required: true},
-   //consulta:{ type: mongoose.ObjectId, ref: 'Consulta', required: true}
+   consulta:{ type: mongoose.ObjectId, ref: 'Consulta', required: true}
 
     })
  
@@ -21,4 +21,4 @@ const esquema = mongoose.Schema({
 // 3º -> o nome da COLEÇÃO no BD que irá receber os objetos que serão
 //       criados a partir deste model (inicial minúscula, plural do
 //       nome do model)
-module.exports = mongoose.model('Veterinario', esquema, 'veterinarios')
+module.exports = mongoose.model('Dentista', esquema, 'dentistas')

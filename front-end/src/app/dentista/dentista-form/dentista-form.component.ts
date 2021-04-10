@@ -1,48 +1,38 @@
-
-import { ClienteService } from './../../cliente/cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DentistaService } from '../dentista.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { AnimalService } from 'src/app/animal/animal.service';
-import { RacaService } from 'src/app/raca/raca.service';
-
+import { SecretariaService } from '../../secretaria/secretaria.service';
 
 @Component({
-  selector: 'app-animal-form',
-  templateUrl: './animal-form.component.html',
-  styleUrls: ['./animal-form.component.scss']
+  selector: 'app-dentista-form',
+  templateUrl: './dentista-form.component.html',
+  styleUrls: ['./dentista-form.component.scss']
 })
-export class AnimalFormComponent implements OnInit {
+export class DentistaFormComponent implements OnInit {
 
-  title : string = 'Novo animal'
-
-  animal : any = {} // Objeto vazio, nome da entidade no SINGULAR
-
-  // Variáveis para armazenas as listagens das entidades relacionadas
-  clientes : any = []   // Nome no plural, vetor vazio
-
-  racas : any = []
+  title : string = 'Novo dentista'
+  dentista : any = {} // Objeto vazio, nome da entidade no SINGULAR
+  secretarias: any = []
 
   constructor(
-    private animalSrv : AnimalService,
-    private clienteSrv : ClienteService,
-    
-    private racaSrv: RacaService,
+    private dentistaSrv : DentistaService,
     private snackBar : MatSnackBar,
     private location : Location,
-    private actRoute : ActivatedRoute
+    private actRoute : ActivatedRoute,
+    private secretariaSrv: SecretariaService
   ) { }
 
-  async ngOnInit() {
+async ngOnInit() {
     // Verificando se existe id na rota que trouxe ao formulário
     if(this.actRoute.snapshot.params['id']) {
       try {
         // 1) Trazer o registro do back-end para edição
-        this.animal = await this.animalSrv.obterUm(this.actRoute.snapshot.params['id'])
+        this.dentista = await this.dentistaSrv.obterUm(this.actRoute.snapshot.params['id'])
         // 2) Mudar o título da página
-        this.title = 'Editando turma'
+        this.title = 'Editando dentista'
       }
       catch(erro) {
         console.log(erro)
@@ -53,9 +43,7 @@ export class AnimalFormComponent implements OnInit {
 
     // Carregar as listagens das entidades relacionadas
     try {
-      this.clientes = await this.clienteSrv.listar()
-    
-      this.racas = await this.racaSrv.listar()
+      this.secretarias = await this.secretariaSrv.listar()
     }
     catch(erro) {
       console.log(erro)
@@ -68,13 +56,13 @@ export class AnimalFormComponent implements OnInit {
     try {
       if(form.valid) {
         // 1) Enviar os dados para o back-end para serem salvos
-        if(this.animal._id) {
+        if(this.dentista._id) {
           // _id existe, esse registro já foi salvo anteriormente
           // no BD e é caso de atualização
-          await this.animalSrv.atualizar(this.animal)
+          await this.dentistaSrv.atualizar(this.dentista)
         }
         else {
-          await this.animalSrv.novo(this.animal)
+          await this.dentistaSrv.novo(this.dentista)
         }
         // 2) Dar um feedback (mensagem) para o usuário
         this.snackBar.open('Dados salvos com sucesso.', 'Entendi',

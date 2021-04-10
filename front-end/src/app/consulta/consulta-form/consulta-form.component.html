@@ -34,19 +34,19 @@
   </mat-form-field>
 
     <mat-form-field>
-    <mat-label>Veterinario</mat-label>
-      <mat-select name="veterinario" [(ngModel)]="consulta.veterinario" required>
-        <mat-option *ngFor="let veterinario of veterinarios" [value]="veterinario._id">
-          {{ veterinario.nome }}
+    <mat-label>Dentista</mat-label>
+      <mat-select name="dentista" [(ngModel)]="consulta.dentista" required>
+        <mat-option *ngFor="let dentista of dentistas" [value]="dentista._id">
+          {{ dentista.nome }}
         </mat-option>
       </mat-select>
   </mat-form-field>
 
     <mat-form-field>
-    <mat-label>Animal</mat-label>
-      <mat-select name="animal" [(ngModel)]="consulta.animal" required>
-        <mat-option *ngFor="let animal of animais" [value]="animal._id">
-          {{ animal.nome }}
+    <mat-label>Cliente</mat-label>
+      <mat-select name="cliente" [(ngModel)]="consulta.cliente" required>
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+          {{ cliente.nome }}
         </mat-option>
       </mat-select>
   </mat-form-field>

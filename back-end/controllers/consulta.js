@@ -51,8 +51,8 @@ controller.listar = async (req, res) => {
     try{
     //find() sem parâmetros é para trazer tudo 
     let dados = await Consulta.find()
-    .populate('animal') //dados completos
-    .populate('veterinario') // 'nome email') //so com nome e email
+    .populate('cliente') //dados completos
+    .populate('dentista') // 'nome email') //so com nome e email
     res.send(dados)// Vai com status HTTP 200: OK
     }
     catch(erro){

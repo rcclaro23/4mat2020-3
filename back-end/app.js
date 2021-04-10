@@ -48,9 +48,9 @@ app.use('/turma', turma)
 module.exports = app;
 
 //Rota para veterinario
-const veterinario = require('./routes/veterinario')
-app.use('/veterinario', veterinario)
-module.exports = app;
+//const veterinario = require('./routes/veterinario')
+//app.use('/veterinario', veterinario)
+//module.exports = app;
 
 //Rota para secretaria
 const secretaria = require('./routes/secretaria')
@@ -63,9 +63,9 @@ app.use('/cliente', cliente)
 module.exports = app;
 
 //Rota para animal
-const animal = require('./routes/animal')
-app.use('/animal', animal)
-module.exports = app;
+//const animal = require('./routes/animal')
+//app.use('/animal', animal)
+//module.exports = app;
 
 //Rota para consulta
 const consulta = require('./routes/consulta')
@@ -73,11 +73,16 @@ app.use('/consulta', consulta)
 module.exports = app;
 
 //Rota para especie
-const especie = require('./routes/especie')
-app.use('/especie', especie)
-module.exports = app;
+//const especie = require('./routes/especie')
+//app.use('/especie', especie)
+//module.exports = app;
 
 //Rota para raca
-const raca = require('./routes/raca')
-app.use('/raca', raca)
+//const raca = require('./routes/raca')
+//app.use('/raca', raca)
+//module.exports = app;
+
+//Rota para dentista
+const dentista = require('./routes/dentista')
+app.use('/dentista', dentista)
 module.exports = app;
